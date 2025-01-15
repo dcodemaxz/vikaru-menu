@@ -64,7 +64,7 @@ The function of this feature is to create a special folder for the bot called ".
 
 ### Ar-Vikaru-Bot | ( install )
 
-This is an Autoresponder file template developed by [Maxz-09](https://github.com/Maxz-09)
+This is an Autoresponder file template developed by [dcodemaxz](https://github.com/dcodemaxz)
 
 The purpose of creating this template is to be able to use a WhatsApp bot that is easy to develop yourself without the need for coding and programming language skills.
 
