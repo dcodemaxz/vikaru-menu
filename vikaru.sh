@@ -1,313 +1,426 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
-# DELETING THE WATERMARK IS FORBIDDEN, RESPECT THE DEVELOPER
+# Don't remove the watermark, respect the creator!
+# -  Script by    : dcodemaxz 
+# -  Github      : https://github.com/dcodemaxz/Vikaru-Bot
+# -  Sosmed    : https://linktr.ee/dcodemaxz
 
-# -  Script by   : Maxtream_09
-# -  Github.     : https://github.com/Maxz-09
-# -  Sosmed    : https://linktr.ee/Maxtream_09
+# Lib ( Don't change it )
+source lib/app.sh
 
+# Open header ( Don't change it )
+Namespace: [Std::Main STD::Log]
+
+# Importing libraries ( Don't change it )
+import.source [io:color.app, inquirer:list.app]
 
 # Color definitions
 white="\033[00m"
 red="\033[31m"
-green="\033[32m"
 yellow="\033[33m"
+green="\033[32m"
+blue="\033[34m"
 
+# Symbol definitions
+success="[\033[32m✓\033[0m]"
+warning="[\033[33m!\033[0m]"
+question="[\033[33m?\033[0m]"
+denied="[\033[31mx\033[0m]"
+process="[\033[34m~\033[0m]"
 
 # Confirm resource check 
 enter() {
     clear
     echo
-    echo -e $white " # [!] Checking system file. make sure your internet is Good!"
-    read -r -s -p $'  • [?] Press enter to continue....\n'
-    function back_option () {
-        clear 
-    }
+    echo -e "  # ${warning} Checking system file. make sure your internet is Good!"
+    read -r -s -p $'  • Press enter to continue...\n'
     
 # Install required resources
     echo
-    echo -e $white "=------------------------------="
-    echo -e $yellow " # [!] Detect resource..."
-    echo -e $white "=------------------------------="
+    echo -e "  # ${process} Detect resource..."
+    echo -e $white "=----------------------------------="
     sleep 1
-    check_resource "figlet"
     check_resource "pv"
     check_resource "git"
+    check_resource "ruby"
     check_resource "unzip"
-    check_resource "nodejs-lts"
-    check_resource "libwebp"
+    check_resource "figlet"
+    check_resource "toilet"
+    check_resource "python"
     check_resource "ffmpeg"
-    echo -e $white "=------------------------------="
+    check_resource "libwebp"
+    check_resource "ossp-uuid"
+    check_resource "nodejs-lts"
     sleep 1
-    echo -e $green " # [✓] All resources installed!"|pv -qL 35
+    echo
+    echo -e "  # ${process} Detect directory..."
+    echo -e $white "=----------------------------------="
+    sleep 1
+    cd /storage/emulated/0/
+    if [ -d ".vikaru-bot" ]; then
+    echo -e "  • ${success} Directory created!"
     sleep 2
-    menu
+    echo
+    clear
+    mainmenu
+    else
+    mkdir /storage/emulated/0/.vikaru-bot
+    echo -e "  • ${success} mkdir /storage/emulated/0/.vikaru-bot"|pv -qL 30
+    sleep 1
+    mv vikaru.sh /storage/emulated/0/.vikaru-bot
+    mv .git /storage/emulated/0/.vikaru-bot
+    mv lib /storage/emulated/0/.vikaru-bot
+    echo "echo 'Start : cd /storage/emulated/0/.vikaru-bot && bash vikaru.sh'" > "vikaru.sh"
+    sleep 1
+    echo -e "  • ${success} mv vikaru.sh"|pv -qL 30
+    cd ~
+    mkdir -p /data/data/com.termux/files/home/.termux/tasker
+    chmod 700 -R /data/data/com.termux/files/home/.termux
+    cd .termux
+    cd tasker
+    echo '#!/data/data/com.termux/files/usr/bin/bash
+
+DIR="/storage/emulated/0/.vikaru-bot/base-vikaru-md"
+
+# Cek apakah proses npm start sudah berjalan
+if pgrep -f "npm start" > /dev/null; then
+  exit 1
+fi
+
+# Jalankan npm start di direktori yang ditentukan
+cd ~ && cd "$DIR" && npm start' > "start.sh"
+    chmod +x "start.sh"    
+    echo -e "  • ${success} mkdir .termux/tasker/start.sh"|pv -qL 30
+    echo -e $white "=----------------------------------="
+    sleep 2
+    echo -e "  # ${warning} Start this cmd :"
+    echo -e $white " "
+    echo -e $white " cd /storage/emulated/0/.vikaru-bot && bash vikaru.sh"|pv -qL 30
+    exit
+    fi
 }
-
-
 
 # Function to check resource installation
 check_resource() {
   package_name="$1"
   dpkg -s $package_name &> /dev/null
   if [ $? -eq 0 ]; then
-    echo -e $green " • [✓] $package_name installed"
+    echo -e "  • ${success} $package_name"
     else
-    echo -e $yellow " • [/] Installing $package_name..."
+    echo -e "  • ${process} $package_name..."
     echo
     pkg install "$package_name" -y
     echo
-    echo -e $green " • [✓] $package_name installed"
+    echo -e "  • ${success} $package_name installed"
     echo
   fi
 }
 
 # Vikaru-Menu
-menu() {
-    clear
-    echo -e -n $white;figlet "Vikaru-Menu"
-    echo -e $white "=------------------------------="
-    echo -e "  # Select an options [ 1-3 ] :"
-    echo -e $white "=------------------------------="
-    echo -e " [1] Install Script"
-    echo -e " [2] Update Script"
-    echo -e " [3] Create bot directory ( one-time )"
-    echo -e " [0] Exit"
-    echo
-    read -p " # Select > " choice
-    
-    case "$choice" in
-    1)
-      # Install All script
-      install
-      ;;
-      2)
-      # Update All script
-      update
-      ;;
-    3)
-      # Create bot directory
-      clear
-      echo -e -n $white;figlet "  Mkdir"
-      echo -e $white "=----------------------------------="
-      echo -e "  Author : Maxtream_09"
-      echo -e "  GitHub : Maxz-09"
-      sleep 1
-      echo
-      mkdir /storage/emulated/0/.vikaru-bot
-      mv vikaru.sh /storage/emulated/0/.vikaru-bot
-      mv .git /storage/emulated/0/.vikaru-bot
-      echo "echo 'Start : cd /storage/emulated/0/.vikaru-bot && bash vikaru.sh'" > "vikaru.sh"
-      echo -e $white "=----------------------------------="
-      echo -e $green " # [✓] mkdir /storage/emulated/0/.vikaru-bot"|pv -qL 30
-      sleep 1
-      echo -e $green " # [✓] mv vikaru.sh"|pv -qL 30
-      echo -e $white "=----------------------------------="
-      sleep 2
-      echo -e $yellow " # [!] Start this cmd :"
-      echo -e $white " "
-      echo -e $white " cd /storage/emulated/0/.vikaru-bot && bash vikaru.sh"|pv -qL 30
-      exit
-      ;;
-    0)
-      exit 0
-      ;;
-    *)
-      echo
-      echo -e $red" # [!] Input denied"|pv -qL 30
-      sleep 1
-      menu
-      ;;
-  esac
+mainmenu() {
+    echo -e -n $blue;figlet "VIKARU"
+    echo -e $white "=----------------------------------="
+    echo -e "  # ${question} Control button ${yellow}↑↓ ${white}- ${green}enter"
+    echo -e $white "=----------------------------------="
+main() {
+  init() {
+    shopt -s expand_aliases
+    # menu = set as var
+    Prompt="[>]"
+  }
+
+  main.setup() {
+    list.input [${Prompt}, menu, output]
+    # parse output
+    let choice=$(grep -Eo "[0-9]" <<< "$output")
+    # cat <<< "$choice";
+  }
+  init
 }
 
+menu=("• [1] Install" "• [2] Update" "• [3] About" "• [0] Exit")
+
+eval main
+
+main.setup
+
+# Handling user selection
+case "$choice" in
+  1)
+    clear
+    maininstall
+    ;;
+  2)
+    clear
+    mainupdate
+    ;;
+  3)
+    clear
+    echo -e -n $blue;figlet "  ABOUT"
+    echo -e $white "=----------------------------------="
+    echo -e "  # ${warning} This script is made to make it easier for users to install bots."
+    read -r -s -p $'  • [?] Press enter to back...\n'
+    clear
+    mainmenu
+    ;;
+  0)
+    clear
+    echo -e "  # ${success} Exit"
+    exit 0
+    ;;
+  *)
+    sleep 1
+    clear    
+    echo -e "  # ${denied} Input denied"|pv -qL 30
+    sleep 1
+    mainmenu
+    ;;
+esac
+}
 
 # Vikaru-Install
-install() {
-    clear
-    echo -e -n $white;figlet "Vikaru-Install"
-    echo -e $white "=------------------------------="
-    echo -e "  # Select an options [ 1-3 ] :"
-    echo -e $white "=------------------------------="
-    echo -e " [1] Ar-Vikaru-Bot"
-    echo -e " [2] Base-Vikaru-Md"
-    echo -e " [3] Base-Vikaru-Md_demo"
-    echo -e " [0] Back"
-    echo
-    maininstall
-    }
-
-# Main install   
 maininstall() {
-    echo -e -n " # Select > ";read pil
-    echo
-if [ $pil == "1" ];then
-    # Install Ar-Vikaru-Bot
+    echo -e -n $blue;figlet "  INSTALL"
+    echo -e $white "=----------------------------------="
+    echo -e "  # ${question} Control button ${yellow}↑↓ ${white}- ${green}enter"
+    echo -e $white "=----------------------------------="
+main() {
+  init() {
+    shopt -s expand_aliases
+    # menu = set as var
+    Prompt="[>]"
+  }
+
+  main.setup() {
+    list.input [${Prompt}, menu, output]
+    # parse output
+    let choice=$(grep -Eo "[0-9]" <<< "$output")
+    # cat <<< "$choice";
+  }
+  init
+}
+
+menu=("• [1] Ar-Vikaru-Bot" "• [2] Base-Vikaru-Md" "• [0] Back")
+
+eval main
+
+main.setup
+
+# Handling user selection
+case "$choice" in
+  1)
     clear
     cd /storage/emulated/0/.vikaru-bot
-    echo -e -n $white;figlet "  Vikaru-Bot"
+    echo -e -n $blue;figlet "  Vikaru-Bot"
     echo -e $white "=----------------------------------="
     echo -e "  Author : Maxtream_09"
     echo -e "  GitHub : Maxz-09"
     sleep 1
     echo
-    echo -e $green " • [/] Install Ar-Vikaru-Bot...."|pv -qL 30
+    if [ -f "ar-vikaru-bot" ]; then
+    echo -e "  # ${success} This script already exists"|pv -qL 30
+    sleep 1
+    else
+    echo -e "  • ${process} Install Ar-Vikaru-Bot..."|pv -qL 30
     sleep 1
     echo -e $white
     git clone https://github.com/Maxz-09/ar-vikaru-bot
-    sleep 1
     echo 
-    echo -e $green " # [✓] Succssesfully"|pv -qL 30
+    echo -e "  # ${success} Succssesfully"|pv -qL 30
     sleep 2
-    install
-elif [ $pil == "2" ];then
-    # Install Base-Vikaru-Md
+    fi
+    clear
+    maininstall
+    ;;
+  2)
     clear
     cd /storage/emulated/0/.vikaru-bot
-    echo -e -n $white;figlet "  Vikaru-Md"
+    echo -e -n $blue;figlet "  Vikaru-Md"
     echo -e $white "=----------------------------------="
     echo -e "  Author : Maxtream_09"
     echo -e "  GitHub : Maxz-09"
     sleep 1
-    echo 
-    echo -e $yellow " • [/] Installing Bot...."|pv -qL 30
+    echo
+    if [ -f "base-vikaru-md" ]; then
+    echo -e "  # ${success} This script already exists"|pv -qL 30
+    sleep 1
+    else
+    echo -e "  • ${process} Bot..."|pv -qL 30
     echo -e $white " " 
     git clone https://github.com/Maxz-09/base-vikaru-md
     sleep 1
     echo
     cd /storage/emulated/0/.vikaru-bot/base-vikaru-md
-    echo -e $green " • [/] Unzip node_modules...."|pv -qL 30
+    echo -e "  • ${process} Unzip node_modules..."|pv -qL 30
     sleep 2
     echo -e $white " "
     unzip "node_modules.zip"
     sleep 1
     echo
-    echo -e $green " # [✓] Succssesfully"|pv -qL 30
+    echo -e "  # ${success} Succssesfully"|pv -qL 30
     sleep 2
-    install
-elif [ $pil == "3" ];then
-    # Install Base-Vikaru-Md_demo
+    fi
     clear
-    cd /storage/emulated/0/.vikaru-bot
-    echo -e -n $white;figlet "  Vikaru-Md_demo"
-    echo -e $white "=----------------------------------="
-    echo -e "  Author : Maxtream_09"
-    echo -e "  GitHub : Maxz-09"
-    sleep 1
-    echo 
-    echo -e $yellow " • [/] Installing Bot...."|pv -qL 30
-    echo -e $white " "
-    git clone https://github.com/Maxz-09/base-vikaru-md_demo
-    sleep 1
-    echo
-    cd /storage/emulated/0/.vikaru-bot/base-vikaru-md_demo
-    echo -e $yellow " • [/] Unzip node_modules...."|pv -qL 30
-    sleep 2
-    echo -e $white " "
-    unzip "node_modules.zip"
-    sleep 1
-    echo 
-    echo -e $green " # [✓] Succssesfully"|pv -qL 30
-    sleep 2
-    install
-elif [ $pil == "0" ];then
+    maininstall
+    ;;
+  0)
     clear
-    echo -e $green" # [✓] Back"
-    menu
-else
-    echo -e $red" # [!] Input denied"|pv -qL 30
+    mainmenu
+    ;;
+  *)
     sleep 1
-    install
-fi
+    clear    
+    echo -e "  # ${denied} Input denied"|pv -qL 30
+    sleep 1
+    maininstall
+    ;;
+esac
 }
-
-
 
 # Vikaru-Update
-update() {
-    clear
-    echo -e -n $white;figlet "Vikaru-Update"
-    echo -e $white "=------------------------------="
-    echo -e "  # Select an options [ 1-4 ] :"
-    echo -e $white "=------------------------------="
-    echo -e " [1] Vikaru.sh"
-    echo -e " [2] Ar-Vikaru-Bot"
-    echo -e " [3] Base-Vikaru-Md"
-    echo -e " [4] Base-Vikaru-Md_demo"
-    echo -e " [0] Back"
-    echo
-    mainupdate
+mainupdate() {
+    echo -e -n $blue;figlet "  UPDATE"
+    echo -e $white "=----------------------------------="
+    echo -e "  # ${question} Control button ${yellow}↑↓ ${white}- ${green}enter"
+    echo -e $white "=----------------------------------="
+main() {
+  init() {
+    shopt -s expand_aliases
+    # menu = set as var
+    Prompt="[>]"
+  }
+
+  main.setup() {
+    list.input [${Prompt}, menu, output]
+    # parse output
+    let choice=$(grep -Eo "[0-9]" <<< "$output")
+    # cat <<< "$choice";
+  }
+  init
 }
 
-# Main update   
-mainupdate() {
-    echo -e -n " # Select > ";read pil
-    echo
-if [ $pil == "1" ];then
-    # Update vikaru.sh
-    echo -e $yellow " # [/] Update..."|pv -qL 30
-    echo -e $white "=----------------------------------="
-    echo -e $green " • [/] Vikaru-Menu :"
-    echo -e $white " "
+menu=("• [1] Vikaru.sh" "• [2] Ar-Vikaru-Bot" "• [3] Base-Vikaru-Md" "• [0] Back")
+
+eval main
+
+main.setup
+
+# Handling user selection
+case "$choice" in
+  1)
     cd /storage/emulated/0/.vikaru-bot/
+    if [ -f "vikaru.sh" ]; then
+    echo
+    else
+    sleep 2
+    clear
+    echo -e "  # ${denied} This file may have been deleted/replaced."
+    echo -e $white " "
+    sleep 1
+    mainupdate
+    fi
+    echo -e $yellow "# [/] Update..."|pv -qL 30
+    echo -e $white "=----------------------------------="
+    echo -e $green "• [/] Vikaru.sh :"
+    echo -e $white
+    if [ -d ".git" ]; then
     git config --global --add safe.directory /storage/emulated/0/.vikaru-bot/
     git pull
     echo -e $white "=----------------------------------="
     sleep 1
-    echo -e $green " # [✓]  Succssesfully"|pv -qL 30
+    echo -e "  # ${success}  Succssesfully"|pv -qL 30
     sleep 2
-    update
-elif [ $pil == "2" ];then
-    # Update Ar-Vikaru-Bot
-    echo -e $yellow " # [/] Update..."|pv -qL 30
+    clear
+    mainupdate
+    else
+    sleep 2
+    clear
+    echo -e "  # ${denied} The '.git' file has been deleted!"
+    sleep 1
+    echo
+    mainupdate
+    fi
+    ;;
+  2)
+    cd /storage/emulated/0/.vikaru-bot/
+    if [ -d "base-vikaru-md_demo" ]; then
+    cd /storage/emulated/0/.vikaru-bot/ar-vikaru-bot/
+    else
+    sleep 2
+    clear
+    echo -e "  # ${denied} This file may have been deleted/replaced."
+    echo -e $white " "
+    sleep 1
+    mainupdate
+    fi
+    echo -e $yellow "# [/] Update..."|pv -qL 30
     echo -e $white "=----------------------------------="
-    echo -e $green " • [/] Ar-Vikaru-Bot :"
+    echo -e $green "• [/] Ar-Vikaru-Bot :"
     echo -e $white
-    cd /storage/emulated/0/.vikaru-bot/ar-vikaru-bot
+    if [ -d ".git" ]; then
     git config --global --add safe.directory /storage/emulated/0/.vikaru-bot/ar-vikaru-bot/
     git pull
     echo -e $white "=----------------------------------="
     sleep 1
-    echo -e $green " # [✓]  Succssesfully"|pv -qL 30
+    echo -e "  # ${success}  Succssesfully"|pv -qL 30
     sleep 2
-    update
-elif [ $pil == "3" ];then
-    # Update Base-Vikaru-Md
-    echo -e $yellow " # [/] Update..."|pv -qL 30
-    echo -e $white "=----------------------------------="
-    echo -e $green " • [/] Ar-Vikaru-Md :"
-    echo -e $white
+    clear
+    mainupdate
+    else
+    sleep 2
+    clear
+    echo -e "  # ${denied} The '.git' file has been deleted!"
+    sleep 1
+    echo
+    mainupdate
+    fi
+    ;;
+  3)
+    cd /storage/emulated/0/.vikaru-bot/
+    if [ -d "base-vikaru-md" ]; then
     cd /storage/emulated/0/.vikaru-bot/base-vikaru-md
+    else
+    sleep 2
+    clear
+    echo -e "  # ${denied} This file may have been deleted/replaced."
+    echo -e $white " "
+    sleep 1
+    mainupdate
+    fi
+    echo -e $yellow "# [/] Update..."|pv -qL 30
+    echo -e $white "=----------------------------------="
+    echo -e $green "• [/] Base-Vikaru-Md :"
+    echo -e $white
+    if [ -d ".git" ]; then
     git config --global --add safe.directory /storage/emulated/0/.vikaru-bot/base-vikaru-md/
     git pull
     echo -e $white "=----------------------------------="
     sleep 1
-    echo -e $green " # [✓]  Succssesfully"|pv -qL 30
+    echo -e "  # ${success}  Succssesfully"|pv -qL 30
     sleep 2
-    update
-elif [ $pil == "4" ];then
-    # Update Base-Vikaru-Md_demo
-    echo -e $yellow " # [/] Update..."|pv -qL 30
-    echo -e $white "=----------------------------------="
-    echo -e $green " • [/] Ar-Vikaru-Md_demo :"
-    echo -e $white
-    cd /storage/emulated/0/.vikaru-bot/base-vikaru-md_demo
-    git config --global --add safe.directory /storage/emulated/0/.vikaru-bot/base-vikaru-md_demo/
-    git pull
-    echo -e $white "=----------------------------------="
-    sleep 1
-    echo -e $green " # [✓]  Succssesfully"|pv -qL 30
-    sleep 2
-    update
-elif [ $pil == "0" ];then
     clear
-    echo -e $green" # [✓] Back"
-    menu
-else
-    echo -e $red" # [!] Input denied"|pv -qL 30
+    mainupdate
+    else
+    sleep 2
+    clear
+    echo -e "  # ${denied} The '.git' file has been deleted!"
     sleep 1
-    update
-fi
+    echo
+    mainupdate
+    fi
+    ;;
+  0)
+    clear
+    mainmenu
+    ;;
+  *)
+    sleep 1
+    clear    
+    echo -e "  # ${denied} Input denied"|pv -qL 30
+    sleep 1
+    mainupdate
+    ;;
+esac
 }
 
 # Start
