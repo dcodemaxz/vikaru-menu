@@ -58,8 +58,6 @@ The following is a menu list from the "vikaru.sh" script.
 
 ### Creating a bot directory
 
-Users who are new to using this script are required to use this feature only once.
-
 The function of this feature is to create a special folder for the bot called ".vikaru-bot" which aims to ensure that the downloaded files can be viewed through this folder so that users no need to move the file from external storage termux 
 
 ### Ar-Vikaru-Bot | ( install )
@@ -195,9 +193,7 @@ Feature list :
 
 - This bot mostly uses Indonesian, if you want to use another language, please just request it to the owner.
 
-### [2] Base-Vikaru-Md | ( install )
-
-The function of this option is to download the file "base-vikaru-md" 
+### Base-Vikaru-Md | ( install )
 
 This file is an "Vikaru-Md" ( multi device ) script which functions as an additional feature for sending media. 
 
@@ -218,46 +214,46 @@ Command list :
 
  ☰  ᴏᴛʜᴇʀ ᴍᴇɴᴜ
 ∘╌────────────────╌∘
-  ▸ /list
-  ▸ /say
-  ▸ /clear
-  ▸ /ping
-  ▸ /owner
-  ▸ /sound
-  ▸ /catalog
-  ▸ /virtex1
-  ▸ /virtex2
-  ▸ /gemini
-  ▸ /autoai
+- /list
+- /say
+- /clear
+- /ping
+- /owner
+- /sound
+- /catalog
+- /virtex1
+- /virtex2
+- /gemini
+- /autoai
 
 
  ☰  ɢʀᴜᴘ ᴍᴇɴᴜ
 ∘╌────────────────╌∘
-  ▸ /kick
-  ▸ /add
-  ▸ /promote
-  ▸ /demote
-  ▸ /infogroup
-  ▸ /pushkontak
-  ▸ /tagall
-  ▸ /mute
+- /kick
+- /add
+- /promote
+- /demote
+- /infogroup
+- /pushkontak
+- /tagall
+- /mute
 
 ☰  sʏsᴛᴇᴍ ᴍᴇɴᴜ
 ∘╌────────────────╌∘
-  ▸ /prefix
-  ▸ /autoread
-  ▸ /autoreadsw
-  ▸ /anticall
-  ▸ /block
-  ▸ /unblock
-  ▸ /getcase
-  ▸ /addmod
-  ▸ /delmod
-  ▸ /addprem
-  ▸ /delprem
-  ▸ /public
-  ▸ /self
-  ▸ /delete
+- /prefix
+- /autoread
+- /autoreadsw
+- /anticall
+- /block
+- /unblock
+- /getcase
+- /addmod
+- /delmod
+- /addprem
+- /delprem
+- /public
+- /self
+- /delete
 
 ##### Note :
 
