@@ -31,7 +31,7 @@ pkg install bash
 ```
 - Clone Vikaru-Bot repo
 ```
-git clone https://github.com/Maxz-09/Vikaru-Bot
+git clone https://github.com/dcodemaxz/Vikaru-Bot
 ```
 
 - Enter the file storage directory
@@ -56,13 +56,13 @@ bash vikaru.sh
 
 The following is a menu list from the "vikaru.sh" script.
 
-### [1] Creating a bot directory | ( one-time )
+### Creating a bot directory
 
 Users who are new to using this script are required to use this feature only once.
 
 The function of this feature is to create a special folder for the bot called ".vikaru-bot" which aims to ensure that the downloaded files can be viewed through this folder so that users no need to move the file from external storage termux 
 
-### [2] Ar-Vikaru-Bot | ( install )
+### Ar-Vikaru-Bot | ( install )
 
 This is an Autoresponder file template developed by [Maxz-09](https://github.com/Maxz-09)
 
@@ -76,7 +76,7 @@ The advantages of this bot are as follows :
 - No need to run using a server
 - Registration System (save contact)
 - Media sending system Vikaru-Md
-- API System [Vikaru-Api](https://vikaru-api.bohr.io/)
+- API System [Vikaru-Api](https://vikaru-api.bohr.io/) (error)
 - Tasker System
 
 ##### Features
@@ -195,7 +195,7 @@ Feature list :
 
 - This bot mostly uses Indonesian, if you want to use another language, please just request it to the owner.
 
-### [3] Base-Vikaru-Md | ( install )
+### [2] Base-Vikaru-Md | ( install )
 
 The function of this option is to download the file "base-vikaru-md" 
 
@@ -215,22 +215,49 @@ Feature list :
 - Reaction messages
 
 Command list :
-- ping
-- menu
-- tagall
-- block
-- unblock
-- sound
-- addadmin
-- deladmin
-- addpremium
-- delpremium
-- gemini
-- anticall on/off
-- autoread on/off
-- autoreadsw on/off
-- virtex1
-- virtex2
+
+ ☰  ᴏᴛʜᴇʀ ᴍᴇɴᴜ
+∘╌────────────────╌∘
+  ▸ /list
+  ▸ /say
+  ▸ /clear
+  ▸ /ping
+  ▸ /owner
+  ▸ /sound
+  ▸ /catalog
+  ▸ /virtex1
+  ▸ /virtex2
+  ▸ /gemini
+  ▸ /autoai
+
+
+ ☰  ɢʀᴜᴘ ᴍᴇɴᴜ
+∘╌────────────────╌∘
+  ▸ /kick
+  ▸ /add
+  ▸ /promote
+  ▸ /demote
+  ▸ /infogroup
+  ▸ /pushkontak
+  ▸ /tagall
+  ▸ /mute
+
+☰  sʏsᴛᴇᴍ ᴍᴇɴᴜ
+∘╌────────────────╌∘
+  ▸ /prefix
+  ▸ /autoread
+  ▸ /autoreadsw
+  ▸ /anticall
+  ▸ /block
+  ▸ /unblock
+  ▸ /getcase
+  ▸ /addmod
+  ▸ /delmod
+  ▸ /addprem
+  ▸ /delprem
+  ▸ /public
+  ▸ /self
+  ▸ /delete
 
 ##### Note :
 
@@ -247,7 +274,7 @@ Especially for termux users, I recommend using "nodejs-lts" for nodejs, which is
 pkg install nodejs-lts -y
 ```
 
-### [4] Base-Vikaru-Md | ( start )
+### Base-Vikaru-Md | ( start )
 - Start bot
 ```
 npm start
@@ -265,13 +292,13 @@ npm start
 /ping
 ```
 
-### [5] All Script | ( Update )
+### Update
 
 This feature functions to update all files, make sure you back up the files before updating because the update will overwrite the files located in the ".vikaru-bot" directory
 
 ## Template Info 
 
-You can buy this script via this [Telegram](https://t.me/Maxtream_09)
+You can buy this script via this [Telegram](https://t.me/dcodemaxz)
 
 Or you can also contact this WhatsApp number :
 ```
