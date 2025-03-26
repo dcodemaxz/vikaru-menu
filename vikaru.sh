@@ -32,6 +32,9 @@ process="[\033[34m~\033[0m]"
 warning="[\033[33m⚠\033[0m]"
 line="=───────────────────────────────="
 
+# Directory definitions
+DIR=$(pwd)
+
 # Confirm resource check
 enter() {
     clear
@@ -72,7 +75,8 @@ enter() {
         clear
         mainmenu
     else
-        cd $(dirname $0)
+        cd $DIR
+        cd ..
         mv -i Vikaru-Bot /sdcard/
         sleep 1
         echo -e "  • ${success} mv Vikaru-Bot"|pv -qL 30
@@ -83,7 +87,7 @@ enter() {
         cd tasker
         echo '#!/data/data/com.termux/files/usr/bin/bash
 
-DIR="/sdcard/Vikaru-Bot/vikaru-md"
+dir_bot="/sdcard/Vikaru-Bot/vikaru-md"
 
 # Cek apakah proses npm start sudah berjalan
 if pgrep -f "npm start" > /dev/null; then
@@ -179,11 +183,11 @@ mainmenu() {
 mainstart() {
     cd /sdcard/Vikaru-Bot/
     if [ -d "vikaru-md" ]; then
-        # DIR=$(dirname "$(readlink -f "$0")")
-        DIR="/sdcard/Vikaru-Bot/vikaru-md"
+        # dir_bot=$(dirname "$(readlink -f "$0")")
+        dir_bot="/sdcard/Vikaru-Bot/vikaru-md"
 
         check_status() {
-            if [[ -f "$DIR/index.js" ]]; then
+            if [[ -f "$dir_bot/index.js" ]]; then
                 local pid=$(pgrep -f "$DIR/index.js")
                 if [[ -n "$pid" ]]; then
                     local status=$(ps -o stat= -p "$pid")
@@ -220,7 +224,7 @@ mainstart() {
                     cd "$DIR" && npm start
                     ;;
                 "missing") # File not found
-                    echo -e "  # ${error} index.js ${red}not found${white} in directory: ${DIR}."
+                    echo -e "  # ${error} index.js ${red}not found${white} in directory: ${dir_bot}."
                     exit 1
                     ;;
                 "paging") # Potential memory issue
