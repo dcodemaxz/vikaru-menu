@@ -56,9 +56,48 @@ bash vikaru.sh
 
 The following is a menu list from the "vikaru.sh" script.
 
-### Creating a bot directory
+## [1] Start
 
-The function of this feature is to create a special folder for the bot called ".vikaru-bot" which aims to ensure that the downloaded files can be viewed through this folder so that users no need to move the file from external storage termux 
+### Vikaru-Md | ( start )
+- Start bot
+```
+npm start
+```
+- Enter the WhatsApp number (62: country code)
+```
+628xxxx
+```
+- Then copy the pairing code and enter the code via the WhatsApp notification that appears.
+  
+- Wait until it enters, then name the device as you wish.
+
+- Then try sending a simple cmd to the bot number
+```
+/ping
+```
+
+## [2] Install
+
+### Vikaru-Md | ( install )
+
+
+
+##### Note :
+
+Make sure you have the latest version of nodeJS to avoid errors.
+
+How to install the latest nodeJS : 
+>https://github.com/nodesource/distributions
+
+<hr>
+  
+#### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1280px-Termux.svg.png" alt="termux_logo" width="20"/> Termux :
+Especially for termux users, I recommend using "nodejs-lts" for nodejs, which is the LongTermSupport version
+```bash
+pkg install nodejs-lts -y
+```
+
+
 
 ### Ar-Vikaru-Bot | ( install )
 
@@ -193,100 +232,7 @@ Feature list :
 
 - This bot mostly uses Indonesian, if you want to use another language, please just request it to the owner.
 
-### Base-Vikaru-Md | ( install )
 
-This file is an "Vikaru-Md" ( multi device ) script which functions as an additional feature for sending media. 
-
-Feature list :
-- Read messages
-- Text messages
-- Media messages
-- Image messages
-- Link messages
-- Audio messages
-- Voice messages
-- Document messages
-- Contact messages
-- Catalog messages
-- Reaction messages
-
-Command list :
-
- ☰  ᴏᴛʜᴇʀ ᴍᴇɴᴜ
-∘╌────────────────╌∘
-- /list
-- /say
-- /clear
-- /ping
-- /owner
-- /sound
-- /catalog
-- /virtex1
-- /virtex2
-- /gemini
-- /autoai
-
-
- ☰  ɢʀᴜᴘ ᴍᴇɴᴜ
-∘╌────────────────╌∘
-- /kick
-- /add
-- /promote
-- /demote
-- /infogroup
-- /pushkontak
-- /tagall
-- /mute
-
-☰  sʏsᴛᴇᴍ ᴍᴇɴᴜ
-∘╌────────────────╌∘
-- /prefix
-- /autoread
-- /autoreadsw
-- /anticall
-- /block
-- /unblock
-- /getcase
-- /addmod
-- /delmod
-- /addprem
-- /delprem
-- /public
-- /self
-- /delete
-
-##### Note :
-
-Make sure you have the latest version of nodeJS to avoid errors.
-
-How to install the latest nodeJS : 
->https://github.com/nodesource/distributions
-
-<hr>
-  
-#### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1280px-Termux.svg.png" alt="termux_logo" width="20"/> Termux :
-Especially for termux users, I recommend using "nodejs-lts" for nodejs, which is the LongTermSupport version
-```bash
-pkg install nodejs-lts -y
-```
-
-### Base-Vikaru-Md | ( start )
-- Start bot
-```
-npm start
-```
-- Enter the WhatsApp number (62: country code)
-```
-628xxxx
-```
-- Then copy the pairing code and enter the code via the WhatsApp notification that appears.
-  
-- Wait until it enters, then name the device as you wish.
-
-- Then try sending a simple cmd to the bot number
-```
-/ping
-```
 
 ### Update
 
