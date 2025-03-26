@@ -72,7 +72,7 @@ enter() {
         clear
         mainmenu
     else
-        cd ..
+        cd $(dirname $0)
         mv -i Vikaru-Bot /sdcard/
         sleep 1
         echo -e "  • ${success} mv Vikaru-Bot"|pv -qL 30
