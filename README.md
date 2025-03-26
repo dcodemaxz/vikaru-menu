@@ -53,7 +53,7 @@ The following is a menu list from the "vikaru.sh" script.
 ### Vikaru-Md | ( start )
 - Enter password
 ```
-Send message to dev to get password
+4331
 ```
 - Enter the WhatsApp number (62: country code)
 ```
