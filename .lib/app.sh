@@ -11,7 +11,7 @@ declare -g paths="/data/data/com.termux/files/usr"
 if test -f "$paths/BashID"; then mkdir ${paths}/BashID; fi
 
 # DONT EDIT
-#function Namespace:(){ a_path=$(pwd); source $a_path/lib/app.sh; eval $@ || false; }
+#function Namespace:(){ a_path=$(pwd); source $a_path/.lib/app.sh; eval $@ || false; }
 DEBUG:(){ :; }
 
 function Namespace:(){
@@ -49,7 +49,7 @@ function __import__(){
 		local __toarrayapp__=(${__apps__})
 		
 		for __raw__ in "${__toarrayapp__[@]}"; do
-			if { builtin source "lib/$__raw__"; }; then
+			if { builtin source ".lib/$__raw__"; }; then
 				imported+=$(printf "$__raw__\n")
 			else
 				cat <<< "[*] Module [$__raw__] tidak di temukan"
