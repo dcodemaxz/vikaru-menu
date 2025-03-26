@@ -14,7 +14,7 @@ Vikaru-Bot is a bot that uses a template from the Autoresponder application and 
 
 ## How to download this bot
 
-- Open your terminal / [termux](https://github.com/termux/termux-app/releases/tag/v0.118.1)
+- Open your terminal / [termux](https://github.com/termux/termux-app/releases/tag/)
 - Give access to your device's internal storage
 ```
 termux-setup-storage
@@ -48,7 +48,7 @@ bash vikaru.sh
 
 1. [AutoResponder Wa](https://play.google.com/store/apps/dev?id=7857280643314172854) (subscribe/sell)
 2. [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) (sell)
-3. [ContactsTask](https://play.google.com/store/apps/details?id=com.balda.contactstask) (free)
+3. [ContactsTask](https://play.google.com/store/apps/details?id=com.balda.contactstask) (sell)
 4. [AutoMail](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://play.google.com/store/apps/details%3Fid%3Dcom.joaomgcd.autogmail%26hl%3Did%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Daplikasi%2Bautomail%26pcampaignid%3DAPPU_1_v2QCZ6CrKeyJ4-EPhaS-4AQ&ved=2ahUKEwjghreuxPmIAxXsxDgGHQWSD0wQ5YQBegQIDBAC&usg=AOvVaw1y31sjS79VE0U_TperMzev) (sell)
 5. [termux](https://github.com/termux/termux-app/releases/tag/v0.118.1) (free)
 
@@ -80,7 +80,7 @@ npm start
 
 ### Vikaru-Md | ( install )
 
-
+Vikaru-Md is a multi-device WhatsApp bot that uses the Baileys library with many useful features.
 
 ##### Note :
 
@@ -99,7 +99,7 @@ pkg install nodejs-lts -y
 
 
 
-### Ar-Vikaru-Bot | ( install )
+### Vikaru-Ar | ( install )
 
 This is an Autoresponder file template developed by [dcodemaxz](https://github.com/dcodemaxz)
 
@@ -138,7 +138,7 @@ Feature list :
    
 #### Getting Started
 
-1. Change to your name (owner) via [mt manager](https://pan.mt2.cn/mt/MT2.16.7.apk)
+1. Change to your name (owner) via [mt manager](https://mt2.cn/download/)
 
 - <a href="https://">
    <img alt="Github" height="200px" src="https://pomf2.lain.la/f/td30ot.jpg">
@@ -234,9 +234,9 @@ Feature list :
 
 
 
-### Update
+## [3] Update
 
-This feature functions to update all files, make sure you back up the files before updating because the update will overwrite the files located in the ".vikaru-bot" directory
+Updates files directly and will overwrite old files. Make sure you backup important files first such as "database" folders and others
 
 ## Template Info 
 
@@ -250,14 +250,13 @@ Or you can also contact this WhatsApp number :
 
 Get file :
 
-- Ar-Vikaru-Bot.csv
-- Ar-Vikaru-Input.csv
-- Tsk-Vikaru-Plugin.xml
-- base-vikaru-md
+- Vikaru-Ar.csv
+- Vikaru-Ar-Input.csv
+- Vikaru-Tsk.xml
+- Vikaru-Md
 
 Buyer benefits :
 
-- Get token for file access
 - Get free updates ( No Expired )
 - Updates 4 times/month 
 - Given guidance to modify
