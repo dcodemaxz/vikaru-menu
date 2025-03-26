@@ -51,9 +51,9 @@ The following is a menu list from the "vikaru.sh" script.
 ## [1] Start
 
 ### Vikaru-Md | ( start )
-- Start bot
+- Enter password
 ```
-npm start
+Send message to dev to get password
 ```
 - Enter the WhatsApp number (62: country code)
 ```
@@ -148,7 +148,7 @@ Feature list :
    <img alt="Github" height="200px" src="https://pomf2.lain.la/f/tybe6il5.jpg">
   </a>
 
-2. Import "Ar-Vikaru-bot.csv" file to Autoresponder
+2. Import "Vikaru-Ar.csv" file to Autoresponder
   
 - <a href="https://">
    <img alt="Github" height="200px" src="https://files.catbox.moe/oiat1k.jpg">
@@ -160,7 +160,7 @@ Feature list :
   
 ---
 
-3. Import "Ar-Vikaru-Input.csv" file to Ar Answer Replacement
+3. Import "Vikaru-Ar-Input.csv" file to Ar Answer Replacement
    
 - <a href="https://">
     <img alt="Github" height="200px" src="https://files.catbox.moe/0zjvmi.jpg">
@@ -183,7 +183,7 @@ Feature list :
    
 ---
 
-6. Import the file "Tsk-Vikaru-plugin.xml" into the Tasker project and enable it
+6. Import the file "Vikaru-Tsk.xml" into the Tasker project and enable it
    
 - <a href="https://">
     <img alt="Github" height="200px" src="https://files.catbox.moe/svogdw.jpg">
