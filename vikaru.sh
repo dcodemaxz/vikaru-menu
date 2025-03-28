@@ -355,7 +355,7 @@ update_component() {
             echo -e "  # ${success} Succssesfully"|pv -qL 30
             sleep 2
             clear
-            if [[ "$component_name" == "Vikaru.sh" ]]; then
+            if [[ "$component_name" == "vikaru.sh" ]]; then
                 echo -e "  # ${error} Please restart this tool :"
                 echo
                 echo -e $white " bash vikaru.sh"|pv -qL 30
@@ -402,7 +402,7 @@ mainupdate() {
         init
     }
 
-    menu=("• [1] Vikaru.sh" "• [2] Vikaru-Ar" "• [3] Vikaru-Md" "• [0] Back")
+    menu=("• [1] Vikaru-Menu" "• [2] Vikaru-Ar" "• [3] Vikaru-Md" "• [0] Back")
 
     eval main
     main.setup
@@ -411,7 +411,7 @@ mainupdate() {
     case "$choice" in
         1)
             clear
-            update_component "."
+            update_component "vikaru.sh"
             mainupdate
             ;;
         2)
