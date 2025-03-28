@@ -276,10 +276,11 @@ install_bot() {
         sleep 1
     else
         echo -e "  • ${process} Install $bot_name..."|pv -qL 30
-        sleep 1
+        echo -e $white "${line}"
         echo -e $white
         git clone "$repo_url"
-        echo
+        echo -e $white
+        echo -e $white "${line}"
         echo -e "  # ${success} Succssesfully"|pv -qL 30
         sleep 2
     fi
