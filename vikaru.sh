@@ -34,12 +34,12 @@ TASKER_SH='#!/data/data/com.termux/files/usr/bin/bash
 
 dir_bot="/sdcard/.Vikaru-Bot/vikaru-md"
 
-# Cek apakah proses npm start sudah berjalan
+# Check if the npm start process is running
 if pgrep -f "npm start" > /dev/null; then
   exit 1
 fi
 
-# Jalankan npm start di direktori yang ditentukan
+# Run npm start in the specified directory
 cd ~ && cd "$dir_bot" && npm start'
 ABOUT=" # Copyright © 2025 dcodemaxz | +6289508899033
 
@@ -75,7 +75,7 @@ check_resources() {
     local resources
     if [[ -z "$1" ]]; then
         # Jika tidak ada argumen, gunakan daftar default
-        resources=("pv" "git" "figlet" "ffmpeg" "libwebp" "nodejs-lts")
+        resources=("pv" "git" "bash" "figlet" "ffmpeg" "libwebp" "nodejs-lts")
         # "ruby" "ossp-uuid" "toilet"
         echo
         echo -e "  # ${process} Detect resource..."
@@ -196,7 +196,6 @@ mainmenu() {
             exit 0
             ;;
         *)
-            sleep 1
             clear
             echo -e "  # ${denied} Input denied"|pv -qL 30
             sleep 1
@@ -240,11 +239,11 @@ mainstart() {
                 ;;
             "suspended") # Task cancelled
                 echo -e "  # ${process} Vikaru-Md is ${yellow}suspended${white}, restarting..."
-                cd "$DIR" && npm start
+                cd "$BOT_DIR/vikaru-md" && npm start 
                 ;;
             "stopped") # Task stopped
                 echo -e "  # ${process} Vikaru-Md is ${yellow}not running${white}, starting..."
-                cd "$DIR" && npm start
+                cd "$BOT_DIR/vikaru-md" && npm start 
                 ;;
             "missing") # File not found
                 echo -e "  # ${error} index.js ${red}not found${white} in directory: $BOT_DIR/vikaru-md."
@@ -253,7 +252,7 @@ mainstart() {
             "paging") # Potential memory issue
                 echo -e "  # ${error} Vikaru-Md might be experiencing ${yellow}memory issues (paging)${white}."
                 echo -e "  # ${process} Attempting to restart..."
-                cd "$DIR" && npm start
+                cd "$BOT_DIR/vikaru-md" && npm start 
                 ;;
         esac
         sleep 2
@@ -265,17 +264,15 @@ install_bot() {
     local bot_name="$1"
     local repo_url="$2"
     cd "$BOT_DIR" || return 1
-    echo -e -n $blue;figlet "  $(echo "$bot_name" | sed 's/-/\ /g' | sed 's/\b\w/\u&/g')"
-    echo -e $white "${line}"
-    echo -e "  Author : dcodemaxz"
-    echo -e "  GitHub : dcodemaxz"
-    sleep 1
-    echo
     if [ -d "$bot_name" ]; then
-        echo -e "  # ${success} This script already exists"|pv -qL 30
+        clear
+        echo -e "  # ${success} This directory already exists"|pv -qL 30
         sleep 1
+        maininstall
     else
-        echo -e "  • ${process} Install $bot_name..."|pv -qL 30
+        #echo -e -n $blue;figlet "  $(echo "$bot_name" | sed 's/-/\ /g' | sed 's/\b\w/\u&/g')"
+        echo -e $white
+        echo -e "  # ${process} Install $bot_name..."|pv -qL 30
         echo -e $white "${line}"
         echo -e $white
         git clone "$repo_url"
@@ -283,6 +280,8 @@ install_bot() {
         echo -e $white "${line}"
         echo -e "  # ${success} Succssesfully"|pv -qL 30
         sleep 2
+        clear
+        maininstall
     fi
     cd "$DIR" || return 1
 }
@@ -319,21 +318,16 @@ maininstall() {
         1)
             clear
             install_bot "vikaru-ar" "https://github.com/dcodemaxz/vikaru-ar"
-            clear
-            maininstall
             ;;
         2)
             clear
             install_bot "vikaru-md" "https://github.com/dcodemaxz/vikaru-md"
-            clear
-            maininstall
             ;;
         0)
             clear
             mainmenu
             ;;
         *)
-            sleep 1
             clear
             echo -e "  # ${denied} Input denied"|pv -qL 30
             sleep 1
@@ -347,7 +341,8 @@ update_component() {
     local component_name="$1"
     local target_dir="$BOT_DIR/$component_name"
     cd "$target_dir" || { echo -e "  # ${denied} Directory $target_dir not found!"|pv -qL 30; sleep 1; return 1; }
-
+    #echo -e -n $blue;figlet "  $(echo "$component_name" | sed 's/-/\ /g' | sed 's/\b\w/\u&/g')"
+    echo -e $white
     echo -e "  # ${process} Update..."|pv -qL 30
     echo -e $white "${line}"
     echo -e $white
@@ -359,8 +354,8 @@ update_component() {
             sleep 1
             echo -e "  # ${success} Succssesfully"|pv -qL 30
             sleep 2
-            clear
             if [[ "$component_name" == "vikaru-menu" ]]; then
+                clear
                 echo -e "  # ${error} Please restart this tool :"
                 echo
                 echo -e $white " bash vikaru.sh"|pv -qL 30
@@ -437,7 +432,6 @@ mainupdate() {
             mainmenu
             ;;
         *)
-            sleep 1
             clear
             echo -e "  # ${denied} Input denied"|pv -qL 30
             sleep 1
