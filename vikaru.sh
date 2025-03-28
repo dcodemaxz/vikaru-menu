@@ -120,7 +120,7 @@ detect_directory() {
     fi
 
     echo -e "  • ${process} Setting up Vikaru-Bot directory..."
-    mkdir .Vikaru-Bot
+    mkdir /sdcard/.Vikaru-Bot
     cd "$DIR" || return 1
     cd ..
     mv -i "$DIR" /sdcard/.Vikaru-Bot || { echo -e "  • ${error} Failed to move Vikaru-Bot directory."; return 1; }
