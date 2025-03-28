@@ -1,10 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 # ------------------------------------------------------------------------------
+
 # Don't remove the watermark, respect the creator!
-# -  Script by    : dcodemaxz
-# -  Github      : https://github.com/dcodemaxz/Vikaru-Bot
-# -  Sosmed    : https://linktr.ee/dcodemaxz
+
+# -  Script by : dcodemaxz
+# -  Github   : https://github.com/dcodemaxz/Vikaru-Bot
+# -  Sosmed : https://linktr.ee/dcodemaxz
+
 # ------------------------------------------------------------------------------
 
 # Lib ( Don't change it )
@@ -374,16 +377,15 @@ mainupdate() {
                 sleep 1
                 mainupdate
             fi
-            echo -e $yellow "# [/] Update..."|pv -qL 30
+            echo -e "  # ${process} Update..."|pv -qL 30
             echo -e $white "${line}"
-            echo -e $green "• [/] Vikaru.sh :"
             echo -e $white
             if [ -d ".git" ]; then
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/
                 git pull
                 echo -e $white "${line}"
                 sleep 1
-                echo -e "  # ${success}  Succssesfully"|pv -qL 30
+                echo -e "  # ${success} Succssesfully"|pv -qL 30
                 sleep 2
                 clear
                 mainupdate
@@ -408,9 +410,8 @@ mainupdate() {
                 sleep 1
                 mainupdate
             fi
-            echo -e $yellow "# [/] Update..."|pv -qL 30
+            echo -e "  # ${process} Update..."|pv -qL 30
             echo -e $white "${line}"
-            echo -e $green "• [/] vikaru-ar :"
             echo -e $white
             if [ -d ".git" ]; then
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/vikaru-ar/
@@ -442,9 +443,8 @@ mainupdate() {
                 sleep 1
                 mainupdate
             fi
-            echo -e $yellow "# [/] Update..."|pv -qL 30
+            echo -e "  # ${process} Update..."|pv -qL 30
             echo -e $white "${line}"
-            echo -e $green "• [/] vikaru-md :"
             echo -e $white
             if [ -d ".git" ]; then
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/vikaru-md/
