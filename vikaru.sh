@@ -411,7 +411,7 @@ mainupdate() {
     case "$choice" in
         1)
             clear
-            update_component "vikaru.sh"
+            update_component "" # Must be empty
             mainupdate
             ;;
         2)
