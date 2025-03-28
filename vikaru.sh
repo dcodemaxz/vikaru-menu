@@ -118,8 +118,6 @@ detect_directory() {
         clear
         return 0
     fi
-
-    echo -e "  • ${process} Setting up Vikaru-Bot directory..."
     mkdir /sdcard/.Vikaru-Bot
     cd "$DIR" || return 1
     cd ..
@@ -131,8 +129,9 @@ detect_directory() {
     echo "$TASKER_SH" > "start.sh"
     chmod +x "start.sh" || { echo -e "  • ${error} Failed to make start.sh executable."; return 1; }
     echo -e "  • ${success} File location successfully adjusted"|pv -qL 30
-    echo -e $white "${line}"
     sleep 2
+    clear
+    echo
     echo -e "  # ${error} Start this cmd :"
     echo
     echo -e $white " cd /sdcard/.Vikaru-Bot/vikaru-menu && bash vikaru.sh"|pv -qL 30
