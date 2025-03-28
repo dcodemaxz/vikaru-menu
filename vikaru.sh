@@ -112,7 +112,7 @@ detect_directory() {
     echo -e $white "${line}"
     sleep 1
     cd /sdcard/ || return 1
-    if [ -d "Vikaru-Bot" ]; then
+    if [ -d ".Vikaru-Bot" ]; then
         echo -e "  • ${success} Vikaru-Bot detected."
         sleep 1
         clear
@@ -135,7 +135,7 @@ detect_directory() {
     sleep 2
     echo -e "  # ${error} Start this cmd :"
     echo
-    echo -e $white " cd /sdcard/.Vikaru-Bot && bash vikaru.sh"|pv -qL 30
+    echo -e $white " cd /sdcard/.Vikaru-Bot/vikaru-menu && bash vikaru.sh"|pv -qL 30
     exit
 }
 
