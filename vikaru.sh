@@ -104,7 +104,7 @@ cd ~ && cd "$DIR" && npm start' > "start.sh"
         echo -e $white "${line}"
         sleep 2
         echo -e "  # ${error} Start this cmd :"
-        echo -e $white " "
+        echo
         echo -e $white " cd /sdcard/Vikaru-Bot && bash vikaru.sh"|pv -qL 30
         exit
     fi
@@ -312,7 +312,7 @@ maininstall() {
                 sleep 1
             else
                 echo -e "  • ${process} Installing vikaru-md..."|pv -qL 30
-                echo -e $white " "
+                echo
                 git clone https://github.com/dcodemaxz/vikaru-md
                 echo
                 sleep 1
@@ -373,7 +373,7 @@ mainupdate() {
                 sleep 2
                 clear
                 echo -e "  # ${denied} This file may have been deleted/replaced."
-                echo -e $white " "
+                echo
                 sleep 1
                 mainupdate
             fi
@@ -384,6 +384,7 @@ mainupdate() {
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/
                 git pull
                 echo -e $white "${line}"
+                echo
                 sleep 1
                 echo -e "  # ${success} Succssesfully"|pv -qL 30
                 sleep 2
@@ -406,7 +407,7 @@ mainupdate() {
                 sleep 2
                 clear
                 echo -e "  # ${denied} This file may have been deleted/replaced."
-                echo -e $white " "
+                echo
                 sleep 1
                 mainupdate
             fi
@@ -417,6 +418,7 @@ mainupdate() {
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/vikaru-ar/
                 git pull
                 echo -e $white "${line}"
+                echo
                 sleep 1
                 echo -e "  # ${success}  Succssesfully"|pv -qL 30
                 sleep 2
@@ -439,7 +441,7 @@ mainupdate() {
                 sleep 2
                 clear
                 echo -e "  # ${denied} This file may have been deleted/replaced."
-                echo -e $white " "
+                echo
                 sleep 1
                 mainupdate
             fi
@@ -450,6 +452,7 @@ mainupdate() {
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/vikaru-md/
                 git pull
                 echo -e $white "${line}"
+                echo
                 sleep 1
                 echo -e "  # ${success}  Succssesfully"|pv -qL 30
                 sleep 2
