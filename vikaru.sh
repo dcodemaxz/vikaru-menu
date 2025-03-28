@@ -379,9 +379,8 @@ mainupdate() {
             if [ -d ".git" ]; then
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/
                 git pull
-                echo
+                echo -e $white
                 echo -e $white "${line}"
-                echo
                 sleep 1
                 echo -e "  # ${success} Succssesfully"|pv -qL 30
                 sleep 2
