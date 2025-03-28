@@ -32,7 +32,6 @@ error="[\033[33m!\033[0m]"
 question="[\033[33m?\033[0m]"
 denied="[\033[31mx\033[0m]"
 process="[\033[34m~\033[0m]"
-warning="[\033[33m⚠\033[0m]"
 line="=───────────────────────────────="
 
 # Directory definitions
@@ -72,7 +71,7 @@ enter() {
     sleep 1
     cd /sdcard/
     if [ -d "Vikaru-Bot" ]; then
-        echo -e "  • ${success} Directory detected!"
+        echo -e "  • ${success} Vikaru-Bot directory detected."
         sleep 1
         echo
         clear
@@ -81,13 +80,10 @@ enter() {
         cd $DIR
         cd ..
         mv -i Vikaru-Bot /sdcard/
-        sleep 1
-        echo -e "  • ${success} mv Vikaru-Bot"|pv -qL 30
         cd ~
         mkdir -p /data/data/com.termux/files/home/.termux/tasker
         chmod 700 -R /data/data/com.termux/files/home/.termux
-        cd .termux
-        cd tasker
+        cd .termux && cd tasker
         echo '#!/data/data/com.termux/files/usr/bin/bash
 
 dir_bot="/sdcard/Vikaru-Bot/vikaru-md"
@@ -372,7 +368,7 @@ mainupdate() {
             else
                 sleep 2
                 clear
-                echo -e "  # ${denied} This file may have been deleted/replaced."
+                echo -e "  # ${denied} This file was not found, deleted/replaced!"
                 echo
                 sleep 1
                 mainupdate
@@ -383,15 +379,16 @@ mainupdate() {
             if [ -d ".git" ]; then
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/
                 git pull
+                echo
                 echo -e $white "${line}"
                 echo
                 sleep 1
                 echo -e "  # ${success} Succssesfully"|pv -qL 30
                 sleep 2
                 clear
-                echo -e "  # ${error} Start this cmd :"
+                echo -e "  # ${error} Please restart this tool :"
                 echo
-                echo -e $white " cd /sdcard/Vikaru-Bot && bash vikaru.sh"|pv -qL 30
+                echo -e $white " bash vikaru.sh"|pv -qL 30
                exit
             else
                 sleep 2
@@ -409,7 +406,7 @@ mainupdate() {
             else
                 sleep 2
                 clear
-                echo -e "  # ${denied} This file may have been deleted/replaced."
+                echo -e "  # ${denied} This file was not found, deleted/replaced!"
                 echo
                 sleep 1
                 mainupdate
@@ -420,6 +417,7 @@ mainupdate() {
             if [ -d ".git" ]; then
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/vikaru-ar/
                 git pull
+                echo
                 echo -e $white "${line}"
                 echo
                 sleep 1
@@ -443,7 +441,7 @@ mainupdate() {
             else
                 sleep 2
                 clear
-                echo -e "  # ${denied} This file may have been deleted/replaced."
+                echo -e "  # ${denied} This file was not found, deleted/replaced!"
                 echo
                 sleep 1
                 mainupdate
@@ -454,6 +452,7 @@ mainupdate() {
             if [ -d ".git" ]; then
                 git config --global --add safe.directory /sdcard/Vikaru-Bot/vikaru-md/
                 git pull
+                echo
                 echo -e $white "${line}"
                 echo
                 sleep 1
