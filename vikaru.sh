@@ -389,7 +389,10 @@ mainupdate() {
                 echo -e "  # ${success} Succssesfully"|pv -qL 30
                 sleep 2
                 clear
-                mainupdate
+                echo -e "  # ${error} Start this cmd :"
+                echo
+                echo -e $white " cd /sdcard/Vikaru-Bot && bash vikaru.sh"|pv -qL 30
+               exit
             else
                 sleep 2
                 clear
