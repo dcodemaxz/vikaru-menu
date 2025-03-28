@@ -31,12 +31,12 @@ pkg install bash
 ```
 - Clone Vikaru-Bot repo
 ```
-git clone https://github.com/dcodemaxz/Vikaru-Bot
+git clone https://github.com/dcodemaxz/vikaru-menu
 ```
 
 - Enter the file storage directory
 ```
-cd Vikaru-Bot
+cd vikaru-menu
 ```
 
 - Run the script vikaru.sh
