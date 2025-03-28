@@ -319,11 +319,13 @@ maininstall() {
         1)
             clear
             install_bot "vikaru-ar" "https://github.com/dcodemaxz/vikaru-ar"
+            clear
             maininstall
             ;;
         2)
             clear
             install_bot "vikaru-md" "https://github.com/dcodemaxz/vikaru-md"
+            clear
             maininstall
             ;;
         0)
@@ -415,16 +417,19 @@ mainupdate() {
         1)
             clear
             update_component "vikaru-menu"
+            clear
             mainupdate
             ;;
         2)
             clear
             update_component "vikaru-ar"
+            clear
             mainupdate
             ;;
         3)
             clear
             update_component "vikaru-md"
+            clear
             mainupdate
             ;;
         0)
