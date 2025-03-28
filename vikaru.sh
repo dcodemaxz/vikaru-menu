@@ -2,7 +2,7 @@
 
 # × ------------------------------------------------------------------------------ -
 # -  Script by : dcodemaxz
-# -  Github   : https://github.com/dcodemaxz/Vikaru-Bot
+# -  Github   : https://github.com/dcodemaxz/vikaru-menu
 # -  Sosmed : https://linktr.ee/dcodemaxz
 # × ------------------------------------------------------------------------------ -
 
@@ -28,11 +28,11 @@ line="=────────────────────────�
 
 # Directory definitions
 DIR=$(pwd)
-BOT_DIR="/sdcard/Vikaru-Bot"
+BOT_DIR="/sdcard/.Vikaru-Bot"
 TASKER_DIR="/data/data/com.termux/files/home/.termux/tasker"
 TASKER_SH='#!/data/data/com.termux/files/usr/bin/bash
 
-dir_bot="/sdcard/Vikaru-Bot/vikaru-md"
+dir_bot="/sdcard/.Vikaru-Bot/vikaru-md"
 
 # Cek apakah proses npm start sudah berjalan
 if pgrep -f "npm start" > /dev/null; then
@@ -120,8 +120,10 @@ detect_directory() {
     fi
 
     echo -e "  • ${process} Setting up Vikaru-Bot directory..."
-    cd "$DIR/.." || return 1
-    mv -i Vikaru-Bot /sdcard/ || { echo -e "  • ${error} Failed to move Vikaru-Bot directory."; return 1; }
+    mkdir .Vikaru-Bot
+    cd "$DIR" || return 1
+    cd ..
+    mv -i "$DIR" /sdcard/.Vikaru-Bot || { echo -e "  • ${error} Failed to move Vikaru-Bot directory."; return 1; }
     cd ~ || return 1
     mkdir -p "$TASKER_DIR" || { echo -e "  • ${error} Failed to create tasker directory."; return 1; }
     chmod 700 -R /data/data/com.termux/files/home/.termux || { echo -e "  • ${error} Failed to set permissions for .termux."; return 1; }
@@ -133,7 +135,7 @@ detect_directory() {
     sleep 2
     echo -e "  # ${error} Start this cmd :"
     echo
-    echo -e $white " cd /sdcard/Vikaru-Bot && bash vikaru.sh"|pv -qL 30
+    echo -e $white " cd /sdcard/.Vikaru-Bot && bash vikaru.sh"|pv -qL 30
     exit
 }
 
@@ -209,7 +211,7 @@ mainstart() {
 
     check_status() {
         if [[ -f "index.js" ]]; then
-            local pid=$(pgrep -f "$DIR/index.js")
+            local pid=$(pgrep -f "index.js")
             if [[ -n "$pid" ]]; then
                 local status=$(ps -o stat= -p "$pid")
                 if [[ "$status" == "T" ]]; then
@@ -355,7 +357,7 @@ update_component() {
             echo -e "  # ${success} Succssesfully"|pv -qL 30
             sleep 2
             clear
-            if [[ "$component_name" == "vikaru.sh" ]]; then
+            if [[ "$component_name" == "vikaru-menu" ]]; then
                 echo -e "  # ${error} Please restart this tool :"
                 echo
                 echo -e $white " bash vikaru.sh"|pv -qL 30
@@ -411,7 +413,7 @@ mainupdate() {
     case "$choice" in
         1)
             clear
-            update_component "" # Must be empty
+            update_component "vikaru-menu"
             mainupdate
             ;;
         2)
