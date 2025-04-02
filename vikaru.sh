@@ -76,7 +76,7 @@ check_resources() {
     if [[ -z "$1" ]]; then
         # Jika tidak ada argumen, gunakan daftar default
         resources=("pv" "bc" "git" "bash" "figlet" "ffmpeg" "libwebp" "nodejs-lts")
-        # "ruby" "ossp-uuid" "toilet"
+        # "ruby" "ossp-uuid"
         echo
         echo -e "  # ${process} Detect resource..."
         echo -e $white "${line}"
