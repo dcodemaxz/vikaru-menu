@@ -4,56 +4,75 @@ Jika kamu menggunakan chrome kamu bisa mengetuk titik 3 yang ada di pojok kanan 
 
 ---
 
-Welcome
---------|
-![](https://media.tenor.com/iVCiM9W7cvYAAAAd/welcome.gif)
+# <div align='center'>Vikaru-Md | WhatsApp Bot Multidevice</div>
 
-# Vikaru-Bot
+<div align="center">
 
-Vikaru-Bot is a WhatsApp bot that uses the Baileys library and is combined with third-party applications Autoresponder and Tasker.
+<img src="image.png" alt="Header Image" width="100%"/>
 
-## How to download this bot
+<br/>
 
-- Open your terminal / [termux](https://github.com/termux/termux-app/releases/tag/)
-- Give access to your device's internal storage
-```
-termux-setup-storage
-```
-- Update your termux ( opsional )
+<!-- Badges -->
+<p>
+  <img src="https://img.shields.io/github/v/release/dcodemaxz/Vikaru-Bot?include_prereleases&sort=semver" alt="Latest Release"/>
+  <img src="https://img.shields.io/github/languages/code-size/dcodemaxz/Vikaru-Bot" alt="Code Size"/>
+  <img src="https://img.shields.io/github/license/dcodemaxz/Vikaru-Bot" alt="License"/>
+  <img src="https://img.shields.io/github/stars/dcodemaxz/Vikaru-Bot" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/dcodemaxz/Vikaru-Bot" alt="Forks"/>
+</p>
+
+<!-- GitHub Stats -->
+<p>
+  <img src="https://github-readme-stats.vercel.app/api?username=dcodemaxz&show_icons=true&theme=radical" alt="GitHub Stats"/>
+</p>
+
+<!-- WhatsApp Links -->
+<p>
+  <a href="https://whatsapp.com/channel/0029Vaf6Op06buMMjrTouL26">
+    <img src="https://img.shields.io/badge/WhatsApp-Channel-brightgreen" alt="WA Channel"/>
+  </a>
+  <a href="https://wa.me/6289508899033">
+    <img src="https://img.shields.io/badge/Developer-WA-green" alt="Wa Developer"/>
+  </a>
+</p>
+
+</div>
+
+
+## # How to download this bot
+
+- Open your terminal / Ubuntu / [Termux](https://github.com/termux/termux-app/releases/tag/)
+- Update your terminal ( opsional )
 ```
 apt update && apt upgrade -y
 ```
+- Install git
 ```
-pkg install git
+apt install git
 ```
+- Install bash
 ```
-pkg install bash
+apt install bash
 ```
-- Clone Vikaru-Bot repo
+- Clone Vikaru-Md repo ( vip only )
 ```
-git clone https://github.com/dcodemaxz/vikaru-menu
+git clone https://github.com/dcodemaxz/vikaru-md
 ```
 
+
+## # Vikaru-Md | ( start )
 - Enter the file storage directory
 ```
-cd vikaru-menu
+cd vikaru-md
 ```
-
-- Run the script vikaru.sh
+- Start bot
 ```
-bash vikaru.sh
+bash start.sh
 ```
-
-# Script feature info :
-
-The following is a menu list from the "vikaru.sh" script.
-
-## [1] Start
-
-### Vikaru-Md | ( start )
+- Select option looping / normal
 - Enter password
 ```
-4331
+****
 ```
 - Enter the WhatsApp number (62: country code)
 ```
@@ -65,209 +84,77 @@ The following is a menu list from the "vikaru.sh" script.
 
 - Then try sending a simple cmd to the bot number
 ```
-/ping
-```
-
-## [2] Install
-
-### Vikaru-Md | ( install )
-
-Vikaru-Md is a multi-device WhatsApp bot that uses the Baileys library with many useful features.
-
-##### Note :
-
-Make sure you have the latest version of nodeJS to avoid errors.
-
-How to install the latest nodeJS : 
->https://github.com/nodesource/distributions
-
-<hr>
-  
-#### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Termux.svg/1280px-Termux.svg.png" alt="termux_logo" width="20"/> Termux :
-Especially for termux users, I recommend using "nodejs-lts" for nodejs, which is the LongTermSupport version
-```bash
-pkg install nodejs-lts -y
-```
-
-
-
-### Vikaru-Ar | ( install )
-
-This is an Autoresponder file template developed by [dcodemaxz](https://github.com/dcodemaxz)
-
-The purpose of creating this template is to be able to use a WhatsApp bot that is easy to develop yourself without the need for coding and programming language skills.
-
-##### Superiority 
-
-The advantages of this bot are as follows :
-
-- Multi Prefix & Multi Device
-- No need to run using a server
-- Registration System (save contact)
-- Media sending system Vikaru-Md
-- API System [Vikaru-Api](https://vikaru-api.bohr.io/) (error)
-- Tasker System
-
-##### Features
-
-This bot has more than 100+ features that can definitely help you through its AI features, and it can also entertain you in your free time with its fun features.
-
-Feature list :
-
-- Main menu
-- Other menu
-- Owner menu
-- Group menu
-- Kerang menu
-- Anime menu
-- Islam menu
-- Game menu
-- System menu
-- Akses-link
-- Script-Termux
-- Kalkulator 
-- Api-Ai
-   
-#### Getting Started
-
-1. Change to your name (owner) via [mt manager](https://mt2.cn/download/)
-
-- <a href="https://">
-   <img alt="Github" height="200px" src="https://pomf2.lain.la/f/td30ot.jpg">
-  </a>
-
-- <a href="https://">
-   <img alt="Github" height="200px" src="https://pomf2.lain.la/f/awdvjzuq.jpg">
-  </a>
-
-- <a href="https://">
-   <img alt="Github" height="200px" src="https://pomf2.lain.la/f/mx0kom.jpg">
-  </a>
-
-- <a href="https://">
-   <img alt="Github" height="200px" src="https://pomf2.lain.la/f/tybe6il5.jpg">
-  </a>
-
-2. Import "Vikaru-Ar.csv" file to Autoresponder
-  
-- <a href="https://">
-   <img alt="Github" height="200px" src="https://files.catbox.moe/oiat1k.jpg">
-  </a>
-  
-- <a href="https://">
-    <img alt="Github" height="200px" src="https://files.catbox.moe/4rn197.jpg">
-  </a>
-  
----
-
-3. Import "Vikaru-Ar-Input.csv" file to Ar Answer Replacement
-   
-- <a href="https://">
-    <img alt="Github" height="200px" src="https://files.catbox.moe/0zjvmi.jpg">
-  </a>
-- <a href="https://">
-    <img alt="Github" height="200px" src="https://files.catbox.moe/5mgwam.jpg">
-  </a>
-  
----
-
-4. Go to Autoresponder settings and change "Automation" to like this
-   
-- <a href="https://">
-    <img alt="Github" height="200px" src="https://files.catbox.moe/4wt63h.jpg">
-  </a>
-  
----
-
-5. Then please change the settings according to your needs
-   
----
-
-6. Import the file "Vikaru-Tsk.xml" into the Tasker project and enable it
-   
-- <a href="https://">
-    <img alt="Github" height="200px" src="https://files.catbox.moe/svogdw.jpg">
-  </a>
-- <a href="https://">
-    <img alt="Github" height="200px" src="https://files.catbox.moe/o8pyi2.jpg">
-  </a>
-  
----
-
-7. Then open the "ContactsTask" application and allow permissions from the application and allow/turn on always running in the background.
-   
----
-
-8. Open the "AutoMail" application and log in using the email account you want to use as the sender of the verification code message from the registration feature in the bot and allow/enable the app to always run in the background.
-   
----
-
-9. Make sure your internet and notifications are not problematic, And don't forget to allow the all application permissions and always allow the application to run in the background. - then start
-    
-- <a href="https://">
-    <img alt="Github" height="200px" src="https://files.catbox.moe/rf1wal.jpg">
-  </a>
-  
----
-
-10. Done, start using a simple command by typing :
-    
-```bash
 /menu
 ```
+<img src="menu.png" alt="Header Image" width="20%"/>
 
-##### Note
+## # Vikaru-Md | ( CLI menu )
 
-- Bots do not reply if they do not receive notifications, make sure the notification is sent correctly. If you open and read a message when someone sends a message, the notification will not come in and can cause bot not replying. and make sure you have a stable internet connection to receive messages.
+<img src="climenu.png" alt="Header Image" width="50%"/>
 
-- This bot prefix uses RegEx in almost all of its cmds, make sure you have basic knowledge about Regular Expression.
-
-- This bot mostly uses Indonesian, if you want to use another language, please just request it to the owner.
-
+Manage sessions in real time while nodejs is running by simply pressing "enter"
 
 
-## [3] Update
+## # Feature info
 
-Updates files directly and will overwrite existing files. Make sure you have backed up other important files such as "database" folders and others.
+### [ 1 ] start.sh
 
-## Required apps
+<img src="start.png" alt="Header Image" width="35%"/>
 
-1. [AutoResponder Wa](https://play.google.com/store/apps/dev?id=7857280643314172854) (subscribe/sell)
-2. [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) (sell)
-3. [ContactsTask](https://play.google.com/store/apps/details?id=com.balda.contactstask) (sell)
-4. [AutoMail](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://play.google.com/store/apps/details%3Fid%3Dcom.joaomgcd.autogmail%26hl%3Did%26referrer%3Dutm_source%253Dgoogle%2526utm_medium%253Dorganic%2526utm_term%253Daplikasi%2Bautomail%26pcampaignid%3DAPPU_1_v2QCZ6CrKeyJ4-EPhaS-4AQ&ved=2ahUKEwjghreuxPmIAxXsxDgGHQWSD0wQ5YQBegQIDBAC&usg=AOvVaw1y31sjS79VE0U_TperMzev) (sell)
-5. [termux](https://github.com/termux/termux-app/releases/tag/v0.118.1) (free)
+Automatically restart the bot if the server closes due to over-limit/error
+- 1 Start Normal : The bot will start normally and if there is a fatal error the bot will stop running.
+- 2 Start Looping : The bot will start looping and if there is a fatal error the bot will restart automatically.
+- 3 Install Update : Updates files directly and will overwrite existing files. Make sure you have backed up other important files such as "database" folders and others.
 
-## Template Info 
+### [ 2 ] vikaru-md
 
-You can buy this script via this [Telegram](https://t.me/dcodemaxz)
+Vikaru-Md is a multi-device WhatsApp bot designed to easily meet various needs, including AI, tools, group management, bug management, and business management. This bot offers comprehensive and unique features, such as:
 
-Or you can also contact this WhatsApp number :
-```
-+6289508899033
-```
+#### ▸ [ Fitur Lainnya ]
+- Pairing code
+- Custom pairing
+- CLI Interactive menu
+- Password and whitelist system when index.js is run
+- The code is neat and easy to modify
+- Multi prefix
+- Multi session (can run on multiple numbers)
+- Innovative interface/log display
+- Anti call
+- Anti link grup
+- Anti promosi
+- Anti Toxic
+- Anti culik bot ke grup
+- Anti Virtex/Spam
+- Welcome, Leave, promote, and demote messages
+- Pushkontak
+- Vn automatic voice
+- Auto AI
+
+#### ▸ [ Menu Utama ]
+- Other Menu
+- Ai Menu
+- Convert Menu
+- Search Menu
+- Anime Menu
+- Bug Menu
+- Tools Menu
+- Group Menu
+- System Menu
 
 
-Get file :
-
-- Vikaru-Ar.csv
-- Vikaru-Ar-Input.csv
-- Vikaru-Tsk.xml
-- Vikaru-Md
+## # Script Info 
+You can buy this script via this [Telegram](https://t.me/dcodemaxz) / [WhatsApp](https://wa.me/6289508899033)
 
 Buyer benefits :
-
 - Get free updates ( No Expired )
-- Updates 4 times/month 
+- Update every week
 - Given guidance to modify
 - Guided to be able to develop bots
 
 You can also use and see the bot features via community [group](https://chat.whatsapp.com/JfpGsd5GPh5EzvRVjm54tx)
 
-## Contributing
-
+## # Contributing
 Feel free to contribute by opening issues or pull requests. Your feedback and contributions are highly appreciated.
 
-### License
-
+## # License
 This project is licensed under the [MIT License](LICENSE).
