@@ -86,13 +86,13 @@ bash start.sh
 ```
 /menu
 ```
-<img src="menu.png" alt="Header Image" width="30%"/>
+<img src="menu.png" alt="Header Image" width="50%"/>
 
 ---
 
 ## # Vikaru-Md | ( CLI menu )
 
-<img src="climenu.png" alt="Header Image" width="50%"/>
+<img src="climenu.png" alt="Header Image" width="100%"/>
 
 Manage sessions in real time while nodejs is running by simply pressing "enter"
 - Stop all session : Stops all running bot sessions/numbers
@@ -105,7 +105,7 @@ Manage sessions in real time while nodejs is running by simply pressing "enter"
 
 ### [ 1 ] start.sh
 
-<img src="start.png" alt="Header Image" width="50%"/>
+<img src="start.png" alt="Header Image" width="100%"/>
 
 Automatically restart the bot if the server closes due to over-limit/error
 - 1 Start Normal : The bot will start normally and if there is a fatal error the bot will stop running.
