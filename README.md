@@ -39,7 +39,7 @@ Jika kamu menggunakan chrome kamu bisa mengetuk titik 3 yang ada di pojok kanan 
 </div>
 
 
-## # How to download this bot
+## # How to install Vikaru-Md
 
 - Open your terminal / Ubuntu / [Termux](https://github.com/termux/termux-app/releases/tag/)
 - Update your terminal ( opsional )
@@ -58,7 +58,7 @@ apt install bash
 ```
 git clone https://github.com/dcodemaxz/vikaru-md
 ```
-
+---
 
 ## # Vikaru-Md | ( start )
 - Enter the file storage directory
@@ -86,7 +86,7 @@ bash start.sh
 ```
 /menu
 ```
-<img src="menu.png" alt="Header Image" width="20%"/>
+<img src="menu.png" alt="Header Image" width="30%"/>
 
 ## # Vikaru-Md | ( CLI menu )
 
@@ -99,12 +99,13 @@ Manage sessions in real time while nodejs is running by simply pressing "enter"
 
 ### [ 1 ] start.sh
 
-<img src="start.png" alt="Header Image" width="35%"/>
+<img src="start.png" alt="Header Image" width="50%"/>
 
 Automatically restart the bot if the server closes due to over-limit/error
 - 1 Start Normal : The bot will start normally and if there is a fatal error the bot will stop running.
 - 2 Start Looping : The bot will start looping and if there is a fatal error the bot will restart automatically.
 - 3 Install Update : Updates files directly and will overwrite existing files. Make sure you have backed up other important files such as "database" folders and others.
+
 
 ### [ 2 ] vikaru-md
 
