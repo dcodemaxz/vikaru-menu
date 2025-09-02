@@ -95,6 +95,9 @@ bash start.sh
 <img src="climenu.png" alt="Header Image" width="50%"/>
 
 Manage sessions in real time while nodejs is running by simply pressing "enter"
+- Stop all session : Stops all running bot sessions/numbers
+- Add another session : Adding new bot session/number
+- Run another session : Run another available session in the session list
 
 ---
 
@@ -114,7 +117,7 @@ Automatically restart the bot if the server closes due to over-limit/error
 
 Vikaru-Md is a multi-device WhatsApp bot designed to easily meet various needs, including AI, tools, group management, bug management, and business management. This bot offers comprehensive and unique features, such as:
 
-#### ▸ [ Fitur Lainnya ]
+#### • [ Fitur Lainnya ]
 - Pairing code
 - Custom pairing
 - CLI Interactive menu
@@ -134,7 +137,7 @@ Vikaru-Md is a multi-device WhatsApp bot designed to easily meet various needs, 
 - Vn automatic voice
 - Auto AI
 
-#### ▸ [ Menu Utama ]
+#### • [ Menu Utama ]
 - Other Menu
 - Ai Menu
 - Convert Menu
