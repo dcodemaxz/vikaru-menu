@@ -88,12 +88,15 @@ bash start.sh
 ```
 <img src="menu.png" alt="Header Image" width="30%"/>
 
+---
+
 ## # Vikaru-Md | ( CLI menu )
 
 <img src="climenu.png" alt="Header Image" width="50%"/>
 
 Manage sessions in real time while nodejs is running by simply pressing "enter"
 
+---
 
 ## # Feature info
 
@@ -142,6 +145,7 @@ Vikaru-Md is a multi-device WhatsApp bot designed to easily meet various needs, 
 - Group Menu
 - System Menu
 
+---
 
 ## # Script Info 
 You can buy this script via this [Telegram](https://t.me/dcodemaxz) / [WhatsApp](https://wa.me/6289508899033)
@@ -154,8 +158,12 @@ Buyer benefits :
 
 You can also use and see the bot features via community [group](https://chat.whatsapp.com/JfpGsd5GPh5EzvRVjm54tx)
 
+---
+
 ## # Contributing
 Feel free to contribute by opening issues or pull requests. Your feedback and contributions are highly appreciated.
+
+---
 
 ## # License
 This project is licensed under the [MIT License](LICENSE).
